@@ -54,9 +54,26 @@ void stack_display(stack_t **stack, unsigned int line_num)
  */
 void stack_top(stack_t **stack, unsigned int line_num)
 {
-	(void) line_num;
-
 	if (stack == NULL || *stack == NULL)
 		_err(5, line_num);
 	printf("%d\n", (*stack)->n);
+}
+
+/**
+ * stack_pop - Removes the top element of the stack
+ * @stack: Pointer to pointer to head of stack
+ * @line_num: Line number from bytecode file
+ */
+void stack_pop(stack_t **stack, unsigned int line_num)
+{
+	stack_t *top;
+
+	if (stack == NULL || *stack == NULL)
+		_err(6, line_num);
+	top = *stack;
+	*stack = top->next;
+
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(top);
 }
