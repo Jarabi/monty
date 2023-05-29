@@ -20,23 +20,11 @@ void stack_add(stack_t **stack, unsigned int line_num)
 }
 
 /**
- * stack_nop - To display contents of a stack
+ * stack_nop - Does nothing.
  * @stack: Pointer to pointer to head of stack
  * @line_num: Line number from bytecode file
  */
 void stack_nop(stack_t **stack, unsigned int line_num)
 {
-	stack_t *current;
-
-	(void) line_num;
-	if (stack == NULL)
-		exit(EXIT_FAILURE);
-
-	current = *stack;
-
-	while (current != NULL)
-	{
-		printf("%d\n", current->n);
-		current = current->next;
-	}
+	(void)stack, (void)line_num;
 }
