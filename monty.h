@@ -55,5 +55,6 @@ void stack_push(stack_t **new_node, unsigned int line_num);
 void stack_display(stack_t **stack, unsigned int line_num);
 void stack_top(stack_t **stack, unsigned int line_num);
 void stack_pop(stack_t **stack, unsigned int line_num);
+void stack_swap(stack_t **stack, unsigned int line_num);
 
 #endif /* MONTY_H */

@@ -76,6 +76,7 @@ void get_op(int line_number, char *opcode, char *value)
 		{"pall", stack_display},
 		{"pint", stack_top},
 		{"pop", stack_pop},
+		{"swap", stack_swap},
 		{NULL, NULL}
 	};
 

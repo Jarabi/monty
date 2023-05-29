@@ -77,3 +77,26 @@ void stack_pop(stack_t **stack, unsigned int line_num)
 		(*stack)->prev = NULL;
 	free(top);
 }
+
+/**
+ * stack_swap - Swaps the top two elements of the stack
+ * @stack: Pointer to pointer to head of stack
+ * @line_num: Line number from bytecode file
+ */
+void stack_swap(stack_t **stack, unsigned int line_num)
+{
+	stack_t *current;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		_err(7, line_num);
+
+	current = (*stack)->next;
+	(*stack)->next = current->next;
+
+	if (current->next != NULL)
+		current->next->prev = *stack;
+	current->next = *stack;
+	(*stack)->prev = current;
+	current->prev = NULL;
+	*stack = current;
+}
