@@ -74,6 +74,7 @@ void get_op(int line_number, char *opcode, char *value)
 	instruction_t ops[] = {
 		{"push", stack_push},
 		{"pall", stack_display},
+		{"pint", stack_top},
 		{NULL, NULL}
 	};
 

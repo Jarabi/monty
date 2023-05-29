@@ -46,3 +46,17 @@ void stack_display(stack_t **stack, unsigned int line_num)
 		current = current->next;
 	}
 }
+
+/**
+ * stack_top - Prints value at the top of the stack
+ * @stack: Pointer to pointer to head of stack
+ * @line_num: Line number from bytecode file
+ */
+void stack_top(stack_t **stack, unsigned int line_num)
+{
+	(void) line_num;
+
+	if (stack == NULL || *stack == NULL)
+		_err(5, line_num);
+	printf("%d\n", (*stack)->n);
+}

@@ -30,6 +30,9 @@ void _err(int status, ...)
 		case 4:
 			fprintf(stderr, "Error: malloc failed\n");
 			break;
+		case 5:
+			fprintf(stderr, "L%d: can't pint, stack empty\n", va_arg(args, int));
+			break;
 	}
 	va_end(args);
 	exit(EXIT_FAILURE);
