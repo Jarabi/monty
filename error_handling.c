@@ -39,6 +39,10 @@ void _err(int status, ...)
 		case 7:
 			fprintf(stderr, "L%d: can't swap, stack too short\n", va_arg(args, int));
 			break;
+		case 8:
+			line_num = va_arg(args, int);
+			fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
+			break;
 	}
 	va_end(args);
 	exit(EXIT_FAILURE);
